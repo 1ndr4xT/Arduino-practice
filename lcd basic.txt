@@ -1,0 +1,28 @@
+
+
+
+
+#include <LiquidCrystal_I2C.h>
+
+// I2C address 0x27 works for most virtual LCDs. If the screen stays blank, try 0x3F.
+// Dimensions: 20 columns, 4 rows
+LiquidCrystal_I2C lcd(0x27, 20, 4);
+
+void setup() {
+  lcd.init();         // Initialize the LCD
+  lcd.backlight();   // Turn on backlight
+  lcd.clear();
+
+  lcd.setCursor(3, 0);  // Column 3, Row 0 (first line)
+  lcd.print("Semester Break");
+  lcd.setCursor(0, 1);  // First column, second line
+  lcd.print("Embedded UpSkill!");
+  lcd.setCursor(0, 2);  // Third line
+  lcd.print("20x4 LCD working");
+  lcd.setCursor(0, 3);  // Fourth line
+  lcd.print("in Simulator!");
+}
+
+void loop() {
+  // Leave empty — static message
+}
